@@ -1,11 +1,11 @@
 package patterns.observer;
 
 import lombok.extern.log4j.Log4j2;
-import patterns.observer.weatherdisplay.CurrentConditionsDisplay;
-import patterns.observer.weatherdisplay.ForecastDisplay;
-import patterns.observer.weatherdisplay.StatisticsDisplay;
-import patterns.observer.weatherdisplay.ThirdPartyDisplay;
-import patterns.observer.subject.WeatherDataSubject;
+import patterns.observer.weather.display.CurrentConditionsDisplay;
+import patterns.observer.weather.display.ForecastDisplay;
+import patterns.observer.weather.display.StatisticsDisplay;
+import patterns.observer.weather.display.ThirdPartyDisplay;
+import patterns.observer.weather.subject.WeatherDataSubject;
 
 @Log4j2
 public class ObserverDemoMain {

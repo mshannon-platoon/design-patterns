@@ -1,8 +1,8 @@
-package patterns.observer.weatherdisplay;
+package patterns.observer.weather.display;
 
 import lombok.extern.log4j.Log4j2;
 import patterns.observer.observer.Observer;
-import patterns.observer.subject.WeatherDataSubject;
+import patterns.observer.weather.subject.WeatherDataSubject;
 
 @Log4j2
 public class CurrentConditionsDisplay implements DisplayElement, Observer {
