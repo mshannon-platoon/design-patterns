@@ -1,10 +1,10 @@
 package patterns.observer;
 
 import lombok.extern.log4j.Log4j2;
-import patterns.observer.weather.display.CurrentConditionsDisplay;
-import patterns.observer.weather.display.ForecastDisplay;
-import patterns.observer.weather.display.StatisticsDisplay;
-import patterns.observer.weather.display.ThirdPartyDisplay;
+import patterns.observer.weather.observers.CurrentConditionsDisplayObserver;
+import patterns.observer.weather.observers.ForecastDisplayObserver;
+import patterns.observer.weather.observers.StatisticsDisplayObserver;
+import patterns.observer.weather.observers.ThirdPartyDisplayObserver;
 import patterns.observer.weather.subject.WeatherDataSubject;
 
 @Log4j2
@@ -13,11 +13,11 @@ public class ObserverDemoMain {
   public static void main(String[] args) {
     WeatherDataSubject weatherDataSubject = new WeatherDataSubject();
 
-    CurrentConditionsDisplay currentConditionsDisplay = new CurrentConditionsDisplay(
+    CurrentConditionsDisplayObserver currentConditionsDisplay = new CurrentConditionsDisplayObserver(
         weatherDataSubject);
-    StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherDataSubject);
-    ForecastDisplay forecastDisplay = new ForecastDisplay(weatherDataSubject);
-    ThirdPartyDisplay thirdPartyDisplay = new ThirdPartyDisplay(weatherDataSubject);
+    StatisticsDisplayObserver statisticsDisplay = new StatisticsDisplayObserver(weatherDataSubject);
+    ForecastDisplayObserver forecastDisplay = new ForecastDisplayObserver(weatherDataSubject);
+    ThirdPartyDisplayObserver thirdPartyDisplay = new ThirdPartyDisplayObserver(weatherDataSubject);
 
     weatherDataSubject.setMeasurements(80, 65, 30.4f);
     weatherDataSubject.setMeasurements(60, 23, 1.8f);

@@ -1,18 +1,18 @@
-package patterns.observer.weather.display;
+package patterns.observer.weather.observers;
 
 import lombok.extern.log4j.Log4j2;
 import patterns.observer.observer.Observer;
 import patterns.observer.weather.subject.WeatherDataSubject;
 
 @Log4j2
-public class ThirdPartyDisplay implements DisplayElement, Observer {
+public class ThirdPartyDisplayObserver implements DisplayElement, Observer {
 
   private float temperature;
   private float humidity;
   private float pressure;
   private final WeatherDataSubject weatherDataSubject;
 
-  public ThirdPartyDisplay(WeatherDataSubject weatherDataSubject) {
+  public ThirdPartyDisplayObserver(WeatherDataSubject weatherDataSubject) {
     this.weatherDataSubject = weatherDataSubject;
     weatherDataSubject.registerObserver(this);
   }
