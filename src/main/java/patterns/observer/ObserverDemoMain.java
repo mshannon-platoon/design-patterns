@@ -13,7 +13,8 @@ public class ObserverDemoMain {
   public static void main(String[] args) {
     WeatherDataSubject weatherDataSubject = new WeatherDataSubject();
 
-    CurrentConditionsDisplay currentConditionsDisplay = new CurrentConditionsDisplay(weatherDataSubject);
+    CurrentConditionsDisplay currentConditionsDisplay = new CurrentConditionsDisplay(
+        weatherDataSubject);
     StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherDataSubject);
     ForecastDisplay forecastDisplay = new ForecastDisplay(weatherDataSubject);
     ThirdPartyDisplay thirdPartyDisplay = new ThirdPartyDisplay(weatherDataSubject);

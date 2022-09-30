@@ -5,6 +5,7 @@ import java.util.List;
 import patterns.observer.observer.Observer;
 
 public class WeatherDataSubject implements Subject {
+
   private final List<Observer> observers;
   private float temperature;
   private float humidity;
@@ -30,11 +31,11 @@ public class WeatherDataSubject implements Subject {
     observers.forEach(observer -> observer.update(temperature, humidity, pressure));
   }
 
-  public void measurementsChanged(){
+  public void measurementsChanged() {
     notifyObservers();
   }
 
-  public void setMeasurements(float temperature, float humidity, float pressure){
+  public void setMeasurements(float temperature, float humidity, float pressure) {
     this.temperature = temperature;
     this.humidity = humidity;
     this.pressure = pressure;
