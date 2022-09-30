@@ -1,9 +1,11 @@
-package patterns.observer.subject;
+package patterns.observer.one.subject;
 
 import java.util.ArrayList;
 import java.util.List;
-import patterns.observer.observer.Observer;
+import lombok.Getter;
+import patterns.observer.one.observer.Observer;
 
+@Getter
 public class WeatherDataSubject implements Subject {
 
   private final List<Observer> observers;
@@ -28,7 +30,7 @@ public class WeatherDataSubject implements Subject {
 
   @Override
   public void notifyObservers() {
-    observers.forEach(observer -> observer.update(temperature, humidity, pressure));
+    observers.forEach(Observer::update);
   }
 
   public void measurementsChanged() {

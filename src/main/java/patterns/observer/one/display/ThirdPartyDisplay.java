@@ -1,8 +1,8 @@
-package patterns.observer.display;
+package patterns.observer.one.display;
 
 import lombok.extern.log4j.Log4j2;
-import patterns.observer.observer.Observer;
-import patterns.observer.subject.WeatherDataSubject;
+import patterns.observer.one.observer.Observer;
+import patterns.observer.one.subject.WeatherDataSubject;
 
 @Log4j2
 public class ThirdPartyDisplay implements DisplayElement, Observer {
@@ -24,10 +24,10 @@ public class ThirdPartyDisplay implements DisplayElement, Observer {
   }
 
   @Override
-  public void update(float temperature, float humidity, float pressure) {
-    this.temperature = temperature;
-    this.humidity = humidity;
-    this.pressure = pressure;
+  public void update() {
+    this.temperature = weatherDataSubject.getTemperature();
+    this.humidity = weatherDataSubject.getHumidity();
+    this.pressure = weatherDataSubject.getPressure();
     display();
   }
 }
