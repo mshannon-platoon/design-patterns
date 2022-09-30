@@ -1,4 +1,4 @@
-package patterns.observer.one.display;
+package patterns.observer.weatherdisplay;
 
 public interface DisplayElement {
 

@@ -1,9 +1,9 @@
-package patterns.observer.one.subject;
+package patterns.observer.subject;
 
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
-import patterns.observer.one.observer.Observer;
+import patterns.observer.observer.Observer;
 
 @Getter
 public class WeatherDataSubject implements Subject {
