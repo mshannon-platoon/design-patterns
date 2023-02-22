@@ -7,8 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PlatDesignPatternsApplication {
 
 	public static void main(String[] args) {
-
-		
 		SpringApplication.run(PlatDesignPatternsApplication.class, args);
 	}
 
