@@ -31,16 +31,16 @@ public class VehicleObserverDemonstrationService {
 
       vehicles.forEach(vehicle -> {
         updateEngineStats(vehicle.getEngineSubject());
-        updateTachoSubject(vehicle.getTachographSubject());
+        updateTachographSubject(vehicle.getTachographSubject());
         updatePositionSubject(vehicle.getPositionSubject());
-        updateShcokSubject(vehicle.getShockSubject());
+        updateShockSubject(vehicle.getShockSubject());
       });
 
       Thread.sleep(1000);
     }
   }
 
-  private void updateShcokSubject(ShockSubject shockSubject) {
+  private void updateShockSubject(ShockSubject shockSubject) {
     double brakeReading = RandomGen.doubleBetween(0.0, 0.100);
     double corneringReading = RandomGen.doubleBetween(0.0, 0.50);
     shockSubject.setData(brakeReading, corneringReading);
@@ -52,7 +52,7 @@ public class VehicleObserverDemonstrationService {
     positionSubject.setData(latitude, longitude);
   }
 
-  private void updateTachoSubject(TachographSubject tachographSubject) {
+  private void updateTachographSubject(TachographSubject tachographSubject) {
     tachographSubject.setData(1);
   }
 
