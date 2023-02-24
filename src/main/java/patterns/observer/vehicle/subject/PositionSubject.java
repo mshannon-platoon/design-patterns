@@ -11,8 +11,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class PositionSubject extends AbstractVehicleSubject {
 
-  private double lat;
-  private double lon;
+  private Double lat;
+  private Double lon;
 
   public PositionSubject(Integer vehicleId){
     this.setVehicleId(vehicleId);
