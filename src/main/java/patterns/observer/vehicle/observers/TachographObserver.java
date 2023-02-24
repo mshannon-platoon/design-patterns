@@ -1,12 +1,14 @@
 package patterns.observer.vehicle.observers;
 
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import patterns.observer.vehicle.subject.TachographSubject;
 
 @Slf4j
+@Getter
 public class TachographObserver extends AbstractVehicleObserver implements ReportingObserver {
 
-  private int totalDriveTime;
+  private Integer totalDriveTime;
 
   private final TachographSubject tachographSubject;
 

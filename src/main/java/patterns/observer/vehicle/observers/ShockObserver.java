@@ -1,5 +1,6 @@
 package patterns.observer.vehicle.observers;
 
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import patterns.observer.vehicle.model.Constants.Email;
 import patterns.observer.vehicle.model.Constants.Shock;
@@ -7,10 +8,11 @@ import patterns.observer.vehicle.subject.ShockSubject;
 import patterns.observer.vehicle.util.Monitor;
 
 @Slf4j
+@Getter
 public class ShockObserver extends AbstractVehicleObserver implements EmailingObserver, Monitor {
 
-  private double brakeThreshold;
-  private double hardCornerThreshold;
+  private Double brakeThreshold;
+  private Double hardCornerThreshold;
 
   private final ShockSubject shockSubject;
 
