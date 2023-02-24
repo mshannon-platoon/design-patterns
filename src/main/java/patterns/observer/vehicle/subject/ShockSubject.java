@@ -7,8 +7,8 @@ import lombok.Setter;
 @Setter
 public class ShockSubject extends AbstractVehicleSubject {
 
-  private double brakeThreshold;
-  private double hardCornerThreshold;
+  private Double brakeThreshold;
+  private Double hardCornerThreshold;
 
   public ShockSubject(Integer vehicleId){
     this.setVehicleId(vehicleId);

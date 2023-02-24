@@ -23,8 +23,8 @@ class PositionObserverTest {
   @Test
   void testUpdate() {
     PositionSubject positionSubject = new PositionSubject(1);
-    positionSubject.setLat(-50);
-    positionSubject.setLon(100);
+    positionSubject.setLat(-50.0);
+    positionSubject.setLon(100.0);
     PositionObserver positionObserver = spy(new PositionObserver(positionSubject));
 
     positionObserver.update();
