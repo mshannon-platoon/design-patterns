@@ -13,10 +13,12 @@ class TachographObserverTest {
 
   @Test
   void testConstructor() {
-    TachographSubject tachographSubject = new TachographSubject(1);
+    TachographSubject tachographSubject = spy(new TachographSubject(1));
     TachographObserver tachographObserver = new TachographObserver(tachographSubject);
     assertNotNull(tachographObserver.getVehicleId());
     assertNull(tachographObserver.getTotalDriveTime());
+
+    verify(tachographSubject).registerObserver(tachographObserver);
   }
 
   @Test
