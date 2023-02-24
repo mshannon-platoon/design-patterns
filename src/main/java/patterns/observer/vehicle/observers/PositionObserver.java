@@ -1,13 +1,15 @@
 package patterns.observer.vehicle.observers;
 
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import patterns.observer.vehicle.subject.PositionSubject;
 
 @Slf4j
+@Getter
 public class PositionObserver extends AbstractVehicleObserver implements ReportingObserver {
 
-  private double lat;
-  private double lon;
+  private Double lat;
+  private Double lon;
 
   private final PositionSubject positionSubject;
 
@@ -26,7 +28,8 @@ public class PositionObserver extends AbstractVehicleObserver implements Reporti
 
   @Override
   public void report() {
-    log.info("Vehicle position has changed for vehicleId: {} lat: {} lon: {}", getVehicleId(), lat, lon);
+    log.info("Vehicle position has changed for vehicleId: {} lat: {} lon: {}", getVehicleId(), lat,
+        lon);
   }
 
 }
