@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 import patterns.observer.vehicle.model.Constants.Email;
 import patterns.observer.vehicle.subject.ShockSubject;
 
-public class ShockObserverTest {
+class ShockObserverTest {
 
   @Test
   void testConstructor() {
