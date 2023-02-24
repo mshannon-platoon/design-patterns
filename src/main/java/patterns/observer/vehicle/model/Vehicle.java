@@ -1,24 +1,36 @@
 package patterns.observer.vehicle.model;
 
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import patterns.observer.vehicle.subject.EngineSubject;
 import patterns.observer.vehicle.subject.PositionSubject;
 import patterns.observer.vehicle.subject.ShockSubject;
-import patterns.observer.vehicle.subject.TachoSubject;
+import patterns.observer.vehicle.subject.TachographSubject;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
 public class Vehicle {
 
+  private Integer vehicleId;
   private EngineSubject engineSubject;
-  private TachoSubject tachoSubject;
+  private TachographSubject tachographSubject;
   private ShockSubject shockSubject;
   private PositionSubject positionSubject;
+
+  public Vehicle(
+      Integer vehicleId,
+      EngineSubject engineSubject,
+      TachographSubject tachographSubject,
+      ShockSubject shockSubject,
+      PositionSubject positionSubject) {
+
+    this.vehicleId = vehicleId;
+    this.engineSubject = engineSubject;
+    this.tachographSubject = tachographSubject;
+    this.shockSubject = shockSubject;
+    this.positionSubject = positionSubject;
+
+  }
 
 }

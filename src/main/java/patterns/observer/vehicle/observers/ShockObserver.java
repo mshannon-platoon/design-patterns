@@ -7,7 +7,7 @@ import patterns.observer.vehicle.subject.ShockSubject;
 import patterns.observer.vehicle.util.Monitor;
 
 @Slf4j
-public class ShockObserver implements EmailingObserver, Monitor {
+public class ShockObserver extends AbstractVehicleObserver implements EmailingObserver, Monitor {
 
   private double brakeThreshold;
   private double hardCornerThreshold;
@@ -17,6 +17,7 @@ public class ShockObserver implements EmailingObserver, Monitor {
   public ShockObserver(ShockSubject shockSubject) {
     this.shockSubject = shockSubject;
     shockSubject.registerObserver(this);
+    this.setVehicleId(shockSubject.getVehicleId());
   }
 
   @Override
@@ -29,7 +30,7 @@ public class ShockObserver implements EmailingObserver, Monitor {
   @Override
   public void email(String reason) {
     // Example only here, just a log for now.
-    log.info("Shock sensors triggered, sending email - reason: {}", reason);
+    log.info("Shock sensors triggered, sending email - reason: {}, vehicleId: {}", reason, getVehicleId());
   }
 
   @Override

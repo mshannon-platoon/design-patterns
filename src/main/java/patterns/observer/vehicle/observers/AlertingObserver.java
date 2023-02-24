@@ -4,6 +4,5 @@ import patterns.observer.observer.Observer;
 
 public interface AlertingObserver extends Observer {
 
-  void alert(String alertMessage);
-
+  void alert(String alertMessage, Double value);
 }

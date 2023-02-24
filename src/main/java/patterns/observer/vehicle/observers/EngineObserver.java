@@ -7,7 +7,7 @@ import patterns.observer.vehicle.subject.EngineSubject;
 import patterns.observer.vehicle.util.Monitor;
 
 @Slf4j
-public class EngineObserver implements AlertingObserver, Monitor {
+public class EngineObserver extends AbstractVehicleObserver implements AlertingObserver, Monitor {
 
   private double lastOilLevel;
   private double lastOilTemp;
@@ -19,6 +19,7 @@ public class EngineObserver implements AlertingObserver, Monitor {
   public EngineObserver(EngineSubject engineSubject) {
     this.engineSubject = engineSubject;
     engineSubject.registerObserver(this);
+    this.setVehicleId(engineSubject.getVehicleId());
   }
 
   @Override
@@ -31,31 +32,31 @@ public class EngineObserver implements AlertingObserver, Monitor {
   }
 
   @Override
-  public void alert(String alertMessage) {
+  public void alert(String alertMessage, Double value) {
     // Webhook, or send API request etc. Let's just log for now.
-    log.warn("An alert has been triggered: {}", alertMessage);
+    log.warn("Alert: {} value: {}, vehicleId: {},", alertMessage, value, getVehicleId());
   }
 
   @Override
   public void monitor() {
     // This is just an example we could do much more advanced concepts here.
     if (lastOilLevel < Engine.MINIMUM_OIL_LEVEL) {
-      alert(Alerts.OIL_LOW);
+      alert(Alerts.OIL_LOW, lastOilLevel);
     }
     if (lastOilLevel > Engine.MAXIMUM_OIL_LEVEL) {
-      alert(Alerts.OIL_OVERFILL);
+      alert(Alerts.OIL_OVERFILL, lastOilLevel);
     }
     if (lastOilTemp > Engine.MAXIMUM_OIL_TEMPERATURE) {
-      alert(Alerts.OIL_EXCEEDING_TEMPERATURE);
+      alert(Alerts.OIL_EXCEEDING_TEMPERATURE, lastOilTemp);
     }
     if (lastCoolantLevel < Engine.MINIMUM_COOLANT_LEVEL) {
-      alert(Alerts.COOLANT_LOW);
+      alert(Alerts.COOLANT_LOW, lastCoolantLevel);
     }
     if (lastCoolantLevel > Engine.MAXIMUM_COOLANT_LEVEL) {
-      alert(Alerts.COOLANT_OVERFILL);
+      alert(Alerts.COOLANT_OVERFILL, lastCoolantLevel);
     }
     if (lastCoolantTemp > Engine.MAXIMUM_COOLANT_TEMPERATURE) {
-      alert(Alerts.COOLANT_EXCEEDING_TEMPERATURE);
+      alert(Alerts.COOLANT_EXCEEDING_TEMPERATURE, lastCoolantTemp);
     }
   }
 }
