@@ -11,10 +11,10 @@ import lombok.Setter;
 @NoArgsConstructor
 public class EngineSubject extends AbstractVehicleSubject {
 
-  private double oilLevel;
-  private double oilTemp;
-  private double coolantLevel;
-  private double coolantTemp;
+  private Double oilLevel;
+  private Double oilTemp;
+  private Double coolantLevel;
+  private Double coolantTemp;
 
   public EngineSubject(Integer vehicleId){
     this.setVehicleId(vehicleId);
