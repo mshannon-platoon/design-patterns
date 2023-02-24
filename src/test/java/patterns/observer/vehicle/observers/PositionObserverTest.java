@@ -13,11 +13,13 @@ class PositionObserverTest {
 
   @Test
   void testConstructor() {
-    PositionSubject positionSubject = new PositionSubject(1);
+    PositionSubject positionSubject = spy(new PositionSubject(1));
     PositionObserver positionObserver = new PositionObserver(positionSubject);
     assertNotNull(positionObserver.getVehicleId());
     assertNull(positionObserver.getLat());
     assertNull(positionObserver.getLon());
+
+    verify(positionSubject).registerObserver(positionObserver);
   }
 
   @Test

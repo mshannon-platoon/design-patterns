@@ -14,7 +14,7 @@ class EngineObserverTest {
 
   @Test
   void testConstructor() {
-    EngineSubject engineSubject = new EngineSubject(1);
+    EngineSubject engineSubject = spy(new EngineSubject(1));
     EngineObserver engineObserver = new EngineObserver(engineSubject);
     assertNotNull(engineObserver.getVehicleId());
     assertNotNull(engineObserver.getEngineSubject());
@@ -22,6 +22,8 @@ class EngineObserverTest {
     assertNull(engineObserver.getLastOilTemp());
     assertNull(engineObserver.getLastCoolantLevel());
     assertNull(engineObserver.getLastCoolantTemp());
+
+    verify(engineSubject).registerObserver(engineObserver);
   }
 
   @Test

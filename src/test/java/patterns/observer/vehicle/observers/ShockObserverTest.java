@@ -16,11 +16,13 @@ class ShockObserverTest {
 
   @Test
   void testConstructor() {
-    ShockSubject shockSubject = new ShockSubject(1);
+    ShockSubject shockSubject = spy(new ShockSubject(1));
     ShockObserver shockObserver = new ShockObserver(shockSubject);
     assertNotNull(shockObserver.getVehicleId());
     assertNull(shockObserver.getBrakeThreshold());
     assertNull(shockObserver.getHardCornerThreshold());
+
+    verify(shockSubject).registerObserver(shockObserver);
   }
 
   @Test
