@@ -1,5 +1,6 @@
 package patterns.observer.vehicle.observers;
 
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import patterns.observer.vehicle.model.Constants.Alerts;
 import patterns.observer.vehicle.model.Constants.Engine;
@@ -7,12 +8,13 @@ import patterns.observer.vehicle.subject.EngineSubject;
 import patterns.observer.vehicle.util.Monitor;
 
 @Slf4j
+@Getter
 public class EngineObserver extends AbstractVehicleObserver implements AlertingObserver, Monitor {
 
-  private double lastOilLevel;
-  private double lastOilTemp;
-  private double lastCoolantLevel;
-  private double lastCoolantTemp;
+  private Double lastOilLevel;
+  private Double lastOilTemp;
+  private Double lastCoolantLevel;
+  private Double lastCoolantTemp;
 
   private final EngineSubject engineSubject;
 
