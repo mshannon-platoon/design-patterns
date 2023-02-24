@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import patterns.observer.vehicle.subject.PositionSubject;
 
 @Slf4j
-public class PositionObserver implements ReportingObserver {
+public class PositionObserver extends AbstractVehicleObserver implements ReportingObserver {
 
   private double lat;
   private double lon;
@@ -14,6 +14,7 @@ public class PositionObserver implements ReportingObserver {
   public PositionObserver(PositionSubject positionSubject) {
     this.positionSubject = positionSubject;
     positionSubject.registerObserver(this);
+    this.setVehicleId(positionSubject.getVehicleId());
   }
 
   @Override
@@ -25,7 +26,7 @@ public class PositionObserver implements ReportingObserver {
 
   @Override
   public void report() {
-    log.info("Vehicle position has changed: lat: {} lon: {}", lat, lon);
+    log.info("Vehicle position has changed for vehicleId: {} lat: {} lon: {}", getVehicleId(), lat, lon);
   }
 
 }

@@ -9,12 +9,16 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class EngineSubject extends AbstractSubject {
+public class EngineSubject extends AbstractVehicleSubject {
 
   private double oilLevel;
   private double oilTemp;
   private double coolantLevel;
   private double coolantTemp;
+
+  public EngineSubject(Integer vehicleId){
+    this.setVehicleId(vehicleId);
+  }
 
   private void dataChange() {
     notifyObservers();

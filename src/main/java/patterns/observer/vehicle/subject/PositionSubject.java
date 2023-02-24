@@ -9,10 +9,14 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class PositionSubject extends AbstractSubject {
+public class PositionSubject extends AbstractVehicleSubject {
 
   private double lat;
   private double lon;
+
+  public PositionSubject(Integer vehicleId){
+    this.setVehicleId(vehicleId);
+  }
 
   private void dataChange(){
     notifyObservers();

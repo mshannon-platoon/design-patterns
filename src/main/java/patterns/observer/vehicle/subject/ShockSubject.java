@@ -5,10 +5,14 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ShockSubject extends AbstractSubject {
+public class ShockSubject extends AbstractVehicleSubject {
 
   private double brakeThreshold;
   private double hardCornerThreshold;
+
+  public ShockSubject(Integer vehicleId){
+    this.setVehicleId(vehicleId);
+  }
 
   private void dataChange() {
     notifyObservers();
