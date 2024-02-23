@@ -9,8 +9,9 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 import org.junit.jupiter.api.Test;
-import patterns.observer.vehicle.model.Constants.Email;
-import patterns.observer.vehicle.subject.ShockSubject;
+import patterns.behavioral.observer.vehicle.model.Constants.Email;
+import patterns.behavioral.observer.vehicle.observers.ShockObserver;
+import patterns.behavioral.observer.vehicle.subject.ShockSubject;
 
 class ShockObserverTest {
 

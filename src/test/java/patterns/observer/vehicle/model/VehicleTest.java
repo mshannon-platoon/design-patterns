@@ -3,10 +3,11 @@ package patterns.observer.vehicle.model;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
-import patterns.observer.vehicle.subject.EngineSubject;
-import patterns.observer.vehicle.subject.PositionSubject;
-import patterns.observer.vehicle.subject.ShockSubject;
-import patterns.observer.vehicle.subject.TachographSubject;
+import patterns.behavioral.observer.vehicle.model.Vehicle;
+import patterns.behavioral.observer.vehicle.subject.EngineSubject;
+import patterns.behavioral.observer.vehicle.subject.PositionSubject;
+import patterns.behavioral.observer.vehicle.subject.ShockSubject;
+import patterns.behavioral.observer.vehicle.subject.TachographSubject;
 
 public class VehicleTest {
 

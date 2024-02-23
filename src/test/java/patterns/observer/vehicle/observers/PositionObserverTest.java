@@ -7,7 +7,8 @@ import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 
 import org.junit.jupiter.api.Test;
-import patterns.observer.vehicle.subject.PositionSubject;
+import patterns.behavioral.observer.vehicle.observers.PositionObserver;
+import patterns.behavioral.observer.vehicle.subject.PositionSubject;
 
 class PositionObserverTest {
 

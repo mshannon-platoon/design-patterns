@@ -7,8 +7,9 @@ import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 
 import org.junit.jupiter.api.Test;
-import patterns.observer.vehicle.model.Constants.Alerts;
-import patterns.observer.vehicle.subject.EngineSubject;
+import patterns.behavioral.observer.vehicle.model.Constants.Alerts;
+import patterns.behavioral.observer.vehicle.observers.EngineObserver;
+import patterns.behavioral.observer.vehicle.subject.EngineSubject;
 
 class EngineObserverTest {
 

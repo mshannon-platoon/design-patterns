@@ -6,6 +6,7 @@ import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 
 import org.junit.jupiter.api.Test;
+import patterns.behavioral.observer.vehicle.subject.PositionSubject;
 
 class PositionSubjectTest {
 

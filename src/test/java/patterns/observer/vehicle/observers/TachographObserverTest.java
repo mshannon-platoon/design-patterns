@@ -7,7 +7,8 @@ import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 
 import org.junit.jupiter.api.Test;
-import patterns.observer.vehicle.subject.TachographSubject;
+import patterns.behavioral.observer.vehicle.observers.TachographObserver;
+import patterns.behavioral.observer.vehicle.subject.TachographSubject;
 
 class TachographObserverTest {
 
